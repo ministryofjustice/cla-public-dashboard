@@ -26,7 +26,12 @@
   }
 
   svg {
-    margin-top: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50px;
+    margin: auto;
 
     circle {
       fill: transparent;
@@ -42,5 +47,18 @@
       fill: rgba(white, .7);
       text-anchor: middle;
     }
+  }
+
+  .pull-title,
+  .commit-author {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    font-size: 1.4rem;
+  }
+
+  .commit-author {
+    bottom: 10px;
   }
 }

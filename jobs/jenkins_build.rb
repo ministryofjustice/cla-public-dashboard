@@ -58,11 +58,20 @@ job_mapping.each do |title, jenkins_project|
     #   percent = get_completion_percentage(jenkins_project[:pre_job])
     end
 
+    parameters = build_info['actions'][0]['parameters']
+
+    if parameters
+      pull_title = parameters.select { |p| p['name'] == 'ghprbPullTitle' }[0]['value']
+      commit_author = parameters.select { |p| p['name'] == 'ghprbActualCommitAuthor' }[0]['value']
+    end
+
     send_event(jenkins_project[:job], {
       title: jenkins_project[:job].sub('CLA Public - ', ''),
       currentResult: current_status,
       lastResult: last_status,
       value: percent,
+      pull_title: pull_title,
+      commit_author: commit_author,
       is_building: current_status == 'BUILDING',
       lastBuiltAgo: time_ago_in_words(Time.at(build_info["timestamp"]/1000))
     })

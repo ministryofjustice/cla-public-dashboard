@@ -1,8 +1,11 @@
 h1.title data-bind="title"
 
+.pull-title data-bind="pull_title"
+.commit-author data-bind="commit_author"
+
 div data-bind-class="currentResult | prepend 'build-status '"
-  svg width="280" height="280" viewPort="0 0 280 280" version="1.1" xmlns="http://www.w3.org/2000/svg"
-    circle r="120" cx="140" cy="140"
-    circle.bar r="120" cx="140" cy="140"
-    text font-size="50" x="140" y="160" data-bind="value | append '%' " data-showif="is_building"
-    text font-size="40" x="140" y="155" data-bind="currentResult" data-hideif="is_building"
+  svg width="240" height="240" viewPort="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    circle r="100" cx="120" cy="120" data-showif="is_building"
+    circle.bar r="100" cx="120" cy="120" data-showif="is_building"
+    text font-size="50" x="120" y="140" data-bind="value | append '%' " data-showif="is_building"
+    text font-size="40" x="120" y="155" data-bind="currentResult" data-hideif="is_building"
