@@ -22,7 +22,7 @@ def get_freshness(time)
   end
 end
 
-SCHEDULER.every '15m', :first_in => 0 do |job|
+SCHEDULER.every '1m', :first_in => 0 do |job|
   ENV['GITHUB_REPOS'].split(',').each do |name|
     r = Octokit::Client.new.repository(name)
     pulls = Octokit.pulls(name, state: 'open', sort: 'updated', direction: 'down').map { |pull|
