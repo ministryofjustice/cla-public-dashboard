@@ -1,0 +1,11 @@
+h1.title
+  ' Pull Requests
+  span._meta data-bind="pulls.length | append ' open'"
+ul
+  li.pull data-foreach-item="pulls"
+    ._number data-bind-class="item.freshness | prepend '_number m-'" data-bind="item.number"
+    .user
+      ._name data-bind="item.user.name"
+      img._avatar data-bind-src="item.user.avatar_url"
+    ._title data-bind="item.title"
+    time._updated-at data-bind="item.updated_at | prepend 'updated ' | append ' ago'"

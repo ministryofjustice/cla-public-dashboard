@@ -1,0 +1,51 @@
+.widget-github {
+  text-align: left;
+
+  .pull {
+    padding: 8px 50px;
+    overflow: hidden;
+
+    ._number {
+      font-weight: 600;
+      color: black;
+      background: rgba(white, .6);
+      float: left;
+      border-radius: 2px;
+      padding: 0 5px;
+      margin-left: -50px;
+
+      &.m-fresh {
+        background: #55d14f;
+      }
+      &.m-normal {
+        background: #eece5a;
+      }
+      &.m-old {
+        background: #8a7ce3;
+      }
+      &.m-stale {
+        background: #f85e61;
+      }
+    }
+
+    .user {
+      float: right;
+      width: 30px;
+      height: 30px;
+      margin-right: -50px;
+
+      ._name {
+        display: none;
+      }
+
+      ._avatar {
+        max-width: 100%;
+      }
+    }
+
+    time {
+      color: rgba(white, .4);
+      font-size: 11px;
+    }
+  }
+}

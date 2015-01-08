@@ -1,0 +1,46 @@
+.widget-jenkins-build {
+  $success-color: #5adc53;
+  $failure-color: #f85e61;
+
+  .SUCCESS {
+    circle {
+      stroke: rgba($success-color, .1);
+    }
+    text {
+      fill: $success-color;
+    }
+  }
+
+  .FAILURE {
+    circle {
+      stroke: rgba($failure-color, .1);
+    }
+    text {
+      fill: $failure-color;
+    }
+  }
+
+  .updated-at {
+    color: rgba(white, .2);
+    font-size: 11px;
+  }
+
+  svg {
+    margin-top: 10px;
+
+    circle {
+      fill: transparent;
+      stroke: rgba(white, .1);
+      stroke-width: 40px;
+    }
+
+    .bar {
+      stroke: #5adc53;
+    }
+
+    text {
+      fill: rgba(white, .7);
+      text-anchor: middle;
+    }
+  }
+}
