@@ -23,3 +23,31 @@ Dashing.on 'ready', ->
       draggable:
         stop: Dashing.showGridsterInstructions
         start: -> Dashing.currentWidgetPositions = Dashing.getWidgetPositions()
+
+  Batman.mixin Batman.Filters,
+    formatDescription: (desc) ->
+      closeInd = desc.indexOf("</a>")
+      anchor = desc.slice(0, closeInd + 4)
+      $aObj = $(anchor)
+      $aObj.text() + " " + $aObj.attr("title")
+
+    getIcon: (result) ->
+      cl = "fa fa-"
+      switch result
+        when "success"
+          cl += "check"
+        when "failure"
+          cl += "times"
+        when "building"
+          cl += "spinner fa-spin"
+        when "aborted"
+          cl += "ban"
+        else
+          cl += "question"
+      cl
+
+    formatTime: (timestamp) ->
+      moment(timestamp).fromNow()
+
+    getAuthor: (actions) ->
+      return actions[0].parameters[2].value

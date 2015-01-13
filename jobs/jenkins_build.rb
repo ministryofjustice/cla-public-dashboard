@@ -4,13 +4,6 @@ require 'time'
 require 'action_view'
 include ActionView::Helpers::DateHelper
 
-JENKINS_URI = URI.parse(ENV['JENKINS_URL'])
-
-JENKINS_AUTH = {
-  'name' => ENV['JENKINS_USER'],
-  'password' => ENV['JENKINS_TOKEN']
-}
-
 # the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 job_mapping = {
   'JOB' => { :job => 'CLA Public - Integration PRs', :pre_job => nil}
