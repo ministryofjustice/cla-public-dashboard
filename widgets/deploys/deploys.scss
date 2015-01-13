@@ -1,0 +1,38 @@
+// ----------------------------------------------------------------------------
+// Widget-deploys styles
+// ----------------------------------------------------------------------------
+$success-color: #55d14f;
+$progress-color: grey;
+$failed-color: #f85e61;
+$notbuilt-color: #333;
+
+.widget-deploys {
+
+  .job-list {
+    margin-top: 20px;
+  }
+
+  .job {
+    text-align: left;
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+
+  h2 {
+    display: block;
+    font-size: 22px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1em;
+
+    &.blue { // color comes from Jenkins, and blue = success. http://jenkins-ci.org/content/why-does-jenkins-have-blue-balls
+      color: $success-color;
+    }
+  }
+
+  .recent-builds,
+  .timestamp {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
