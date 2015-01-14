@@ -8,3 +8,9 @@ require 'pry'
 include ActionView::Helpers::DateHelper
 
 Dotenv.load
+
+JENKINS_URI = URI.parse(ENV['JENKINS_URL'])
+JENKINS_AUTH = {
+  'name' => ENV['JENKINS_USER'],
+  'password' => ENV['JENKINS_TOKEN']
+}

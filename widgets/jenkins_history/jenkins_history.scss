@@ -1,0 +1,60 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #454746;
+$pass-colour: #55d14f;
+$fail-colour: #f85e61;
+$abort-colour: #666666;
+$building-colour: #9999d4;
+
+// ----------------------------------------------------------------------------
+// Widget styles
+// ----------------------------------------------------------------------------
+.widget-jenkins-history {
+
+  li {
+    text-align: left;
+    margin: 10px 0;
+    font-size: 15px;
+
+    i {
+      font-size: 18px;
+      width: 20px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    i, span {
+      display: inline-block;
+    }
+
+    &.building {
+      color: $building-colour;
+    }
+    &.success {
+      color: $pass-colour;
+    }
+    &.failure {
+      color: $fail-colour;
+    }
+    &.aborted {
+      color: $abort-colour;
+    }
+
+    .number {
+      margin-right: 5px;
+    }
+    .time {
+      margin-left: 25px;
+    }
+    .author {
+      margin-left: 5px;
+    }
+    .byline {
+      opacity: .6;
+      font-size: 0.8rem;
+    }
+  }
+
+}
