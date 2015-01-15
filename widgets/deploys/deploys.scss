@@ -2,9 +2,8 @@
 // Widget-deploys styles
 // ----------------------------------------------------------------------------
 $success-color: #55d14f;
-$progress-color: grey;
+$unstable-color: #d1d14f;
 $failed-color: #f85e61;
-$notbuilt-color: #333;
 
 .widget-deploys {
 
@@ -25,8 +24,17 @@ $notbuilt-color: #333;
     text-transform: uppercase;
     line-height: 1em;
 
-    &.blue { // color comes from Jenkins, and blue = success. http://jenkins-ci.org/content/why-does-jenkins-have-blue-balls
+    &.blue,
+    &.blue_anime { // color comes from Jenkins, and blue = success. http://jenkins-ci.org/content/why-does-jenkins-have-blue-balls
       color: $success-color;
+    }
+    &.red,
+    &.red_anime {
+      color: $failed-color;
+    }
+    &.yellow,
+    &.yellow_anime {
+      color: $unstable-color;
     }
   }
 
