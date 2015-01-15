@@ -1,0 +1,7 @@
+h1.title data-bind="title"
+
+ul.job-list
+  li.job.clearfix data-foreach-job="jobs" data-bind-data-state="job.color" data-bind-data-health="job.healthReport[0].score"
+    h2 data-bind-class="job.color" data-bind="job.name"
+    .timestamp data-bind="job.lastBuild.timestamp | formatTime"
+    .recent-builds data-bind="job.healthReport[0].description"
