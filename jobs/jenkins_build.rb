@@ -9,14 +9,9 @@ job_mapping = {
   'JOB' => { :job => 'CLA Public - Integration PRs' }
 }
 
-def get_number_of_failing_tests(job_name)
-  info = get_json_for_job(job_name, 'lastCompletedBuild')
-  info['actions'][4]['failCount']
-end
-
 def get_completion_percentage(job_name)
   build_info = get_json_for_job(job_name)
-  prev_build_info = get_json_for_job(job_name, 'lastCompletedBuild')
+  prev_build_info = get_json_for_job(job_name, 'lastSuccessfulBuild')
 
   return 0 if not build_info['building']
   last_duration = (prev_build_info['duration'] / 1000).round(2)
@@ -54,21 +49,30 @@ job_mapping.each do |title, jenkins_project|
 
     if parameters
       pull_title = parameters.select { |p| p['name'] == 'ghprbPullTitle' }[0]['value']
+      pull_number = parameters.select { |p| p['name'] == 'ghprbPullId' }[0]['value']
       commit_author = parameters.select { |p| p['name'] == 'ghprbActualCommitAuthor' }[0]['value']
     end
 
+    started_at = Time.at(1421420095797/1000)
+
     send_event(jenkins_project[:job], {
       title: 'Pull Request build',
+      buildNumber: build_info['number'],
       currentResult: current_status,
       lastResult: last_status,
       percent: percent,
       rotaryValue: percent * 240 / 100 - 120,
       pullTitle: pull_title,
-      commit_author: commit_author,
+      pullNumber: pull_number,
+      commitAuthor: commit_author,
       isBuilding: current_status == 'BUILDING',
       isSuccess: current_status == 'SUCCESS',
       isFailure: current_status == 'FAILURE',
-      lastBuiltAgo: time_ago_in_words(Time.at(build_info["timestamp"]/1000))
+      isAborted: current_status == 'ABORTED',
+      buildingDuration: distance_of_time_in_words(Time.now, Time.at(build_info['timestamp']/1000)),
+      builtDuration: Time.at(build_info['duration']/1000).utc.strftime('%H:%M:%S'),
+      estimatedDuration: distance_of_time_in_words(build_info['duration']/1000, build_info['estimatedDuration']/1000),
+      lastBuiltAgo: time_ago_in_words(Time.at(build_info['timestamp']/1000 + build_info['duration']/1000))
     })
   end
 end
