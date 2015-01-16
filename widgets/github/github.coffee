@@ -6,4 +6,5 @@ class Dashing.Github extends Dashing.Widget
   onData: (data) ->
     # Handle incoming data
     # You can access the html node of this widget with `@node`
+    console.log(data)
     $(@node).fadeOut().fadeIn()
