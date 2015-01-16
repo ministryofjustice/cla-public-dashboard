@@ -18,7 +18,7 @@ SCHEDULER.every '30s', :first_in => 0 do
   response = http.request(request)
   data = response.body
   jsondata = JSON.parse(data)
-  statuses = jsondata['builds'][0..NUM_LINES-1]
+  statuses = jsondata['builds'][1..NUM_LINES-1]
 
   send_event('jenkins_history', "statuses" => statuses)
 

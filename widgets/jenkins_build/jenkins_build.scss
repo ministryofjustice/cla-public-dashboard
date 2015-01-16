@@ -1,8 +1,5 @@
 .widget-jenkins-build {
-  .updated-at {
-    color: rgba(white, .2);
-    font-size: 11px;
-  }
+  text-align: left;
 
   svg {
     position: absolute;
@@ -19,16 +16,36 @@
   }
 
   .pull-title,
-  .commit-author {
+  .build-meta {
     position: absolute;
     left: 0;
     right: 0;
     padding: 20px;
+  }
+
+  .pull-title {
     font-size: 1.4rem;
+    max-height: 3.3em;
+    overflow: hidden;
+  }
+
+  .build-meta {
+    bottom: 10px;
+    font-size: 1.3rem;
   }
 
   .commit-author {
-    bottom: 10px;
-    font-size: 1.3rem;
+    float: left;
+  }
+
+  .time {
+    text-align: right;
+    font-size: .7em;
+    float: right;
+    margin-top: -.5em;
+
+    ._label {
+      opacity: .5;
+    }
   }
 }
