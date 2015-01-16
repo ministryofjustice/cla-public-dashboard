@@ -35,13 +35,13 @@ Dashing.on 'ready', ->
       cl = "fa fa-"
       switch result
         when "success"
-          cl += "check"
+          cl += "thumbs-up"
         when "failure"
-          cl += "times"
+          cl += "thumbs-down"
         when "building"
           cl += "spinner fa-spin"
         when "aborted"
-          cl += "ban"
+          cl += "close"
         else
           cl += "question"
       cl
