@@ -144,41 +144,6 @@ h3 {
   cursor: pointer;
 }
 
-.widget {
-  padding: 25px 12px;
-  text-align: center;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.widget.status-warning {
-  background-color: $background-warning-color-1;
-  @include animation(status-warning-background, 2s, ease, infinite);
-
-  .icon-warning-sign {
-    display: inline-block;
-  }
-
-  .title, .more-info {
-    color: $text-warning-color;
-  }
-}
-
-.widget.status-danger {
-  color: $text-danger-color;
-  background-color: $background-danger-color-1;
-  @include animation(status-danger-background, 2s, ease, infinite);
-
-  .icon-warning-sign {
-    display: inline-block;
-  }
-
-  .title, .more-info {
-    color: $text-danger-color;
-  }
-}
-
 .more-info {
   font-size: 15px;
   position: absolute;
@@ -252,30 +217,3 @@ h3 {
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
-
-
-// ----------------------------------------------------------------------------
-// Customisations
-// ----------------------------------------------------------------------------
-.widget {
-  vertical-align: top;
-  color: #ccc;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 1rem;
-  background: rgba(white, .1);
-
-  > .title {
-    font-size: 16px;
-    margin: 0;
-    color: white;
-    text-align: inherit;
-    padding-bottom: 10px;
-    margin-bottom: 5px;
-    border-bottom: 2px solid rgba(white, .2);
-
-    ._meta {
-      float: right;
-    }
-  }
-}

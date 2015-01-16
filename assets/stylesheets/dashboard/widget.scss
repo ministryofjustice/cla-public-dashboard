@@ -1,0 +1,57 @@
+.widget {
+  padding: 25px 12px;
+  text-align: center;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.widget.status-warning {
+  background-color: $background-warning-color-1;
+  @include animation(status-warning-background, 2s, ease, infinite);
+
+  .icon-warning-sign {
+    display: inline-block;
+  }
+
+  .title, .more-info {
+    color: $text-warning-color;
+  }
+}
+
+.widget.status-danger {
+  color: $text-danger-color;
+  background-color: $background-danger-color-1;
+  @include animation(status-danger-background, 2s, ease, infinite);
+
+  .icon-warning-sign {
+    display: inline-block;
+  }
+
+  .title, .more-info {
+    color: $text-danger-color;
+  }
+}
+
+.widget {
+  vertical-align: top;
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem;
+  background: rgba(white, .1);
+
+  > .title {
+    font-size: 16px;
+    color: white;
+    margin: -1em -1em 0;
+    padding: .8em 1em;
+    text-align: left;
+    border-bottom: 2px solid black;
+
+    ._meta {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+}
