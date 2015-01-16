@@ -1,3 +1,5 @@
+delay = (ms, func) -> setTimeout func, ms
+
 class Dashing.Github extends Dashing.Widget
 
   ready: ->
@@ -7,4 +9,10 @@ class Dashing.Github extends Dashing.Widget
     # Handle incoming data
     # You can access the html node of this widget with `@node`
     console.log(data)
-    $(@node).fadeOut().fadeIn()
+
+    @onUpdate(1000)
+
+  onUpdate: (duration) ->
+    duration = duration || 200
+    $(@node).addClass('s-updated')
+    delay duration, => $(@node).removeClass('s-updated')
