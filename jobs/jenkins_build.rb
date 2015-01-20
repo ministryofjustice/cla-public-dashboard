@@ -56,7 +56,6 @@ job_mapping.each do |title, jenkins_project|
     started_at = Time.at(1421420095797/1000)
 
     send_event(jenkins_project[:job], {
-      title: 'Pull Request build',
       buildNumber: build_info['number'],
       currentResult: current_status,
       lastResult: last_status,
