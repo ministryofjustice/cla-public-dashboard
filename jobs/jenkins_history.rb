@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 
 #constants
-NUM_LINES = 9
+NUM_LINES = 10
 
 
 SCHEDULER.every '30s', :first_in => 0 do
