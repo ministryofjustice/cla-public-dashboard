@@ -54,6 +54,6 @@ def get_jobs(jobs)
   results
 end
 
-SCHEDULER.every '1200s', :first_in => 0 do
+SCHEDULER.every '120s', :first_in => 0 do
   send_event('deploys', { jobs: get_jobs(JOBS) })
 end
