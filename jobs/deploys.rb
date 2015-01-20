@@ -36,11 +36,15 @@ def get_jobs(jobs)
 
     status = case result['color']
     when 'blue'
-      'success'
+      { type: 'success', icon: 'success' }
+    when 'blue_anime'
+      { type: 'success', icon: 'building' }
     when 'red'
-      'failure'
+      { type: 'failure', icon: 'failure' }
+    when 'red_anime'
+      { type: 'failure', icon: 'building' }
     else
-      'unstable'
+      { type: 'unstable', icon: 'warning' }
     end
 
     result['status'] = status

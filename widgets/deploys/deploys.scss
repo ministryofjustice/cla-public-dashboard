@@ -8,7 +8,7 @@ $failed-color: #f85e61;
 
 .widget-deploys {
   .job {
-    padding: 30px 0 30px 75px;
+    padding: 28px 0 28px 75px;
     text-align: left;
     position: relative;
     line-height: 1;
@@ -30,6 +30,9 @@ $failed-color: #f85e61;
     }
     &.m-unstable .fa {
       color: $unstable-color;
+    }
+    &.m-failure .fa {
+      color: $failed-color;
     }
     &.m-failure .fa {
       color: $failed-color;
