@@ -1,46 +1,60 @@
 // ----------------------------------------------------------------------------
 // Widget-deploys styles
 // ----------------------------------------------------------------------------
+
 $success-color: #55d14f;
 $unstable-color: #d1d14f;
 $failed-color: #f85e61;
 
 .widget-deploys {
-
-  .job-list {
-    margin-top: 20px;
-  }
-
   .job {
+    padding: 30px 0 30px 75px;
     text-align: left;
-    font-size: 24px;
-    margin: 0 0 20px;
-  }
+    position: relative;
+    line-height: 1;
 
-  h2 {
-    display: block;
-    font-size: 22px;
-    font-weight: normal;
-    text-transform: uppercase;
-    line-height: 1em;
+    &:not(:first-child) {
+      border-top: 1px solid rgba(white, .2);
+    }
 
-    &.blue,
-    &.blue_anime { // color comes from Jenkins, and blue = success. http://jenkins-ci.org/content/why-does-jenkins-have-blue-balls
+    .fa {
+      position: absolute;
+      left: 0;
+      font-size: 60px;
+      width: 60px;
+      text-align: center;
+    }
+
+    &.m-success .fa {
       color: $success-color;
     }
-    &.red,
-    &.red_anime {
-      color: $failed-color;
-    }
-    &.yellow,
-    &.yellow_anime {
+    &.m-unstable .fa {
       color: $unstable-color;
+    }
+    &.m-failure .fa {
+      color: $failed-color;
     }
   }
 
-  .recent-builds,
+  ._main {
+    color: white;
+  }
+
+  ._secondary {
+    margin-top: 10px;
+    color: rgba(white, .4);
+  }
+
+  .job-label {
+    float: left;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: none;
+  }
+
   .timestamp {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    float: right;
+    font-size: 20px;
+    line-height: 28px;
   }
 }

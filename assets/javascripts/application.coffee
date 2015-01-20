@@ -42,6 +42,8 @@ Dashing.on 'ready', ->
           cl += "spinner fa-spin"
         when "aborted"
           cl += "close"
+        when "unstable"
+          cl += "exclamation-triangle"
         else
           cl += "question"
       cl
