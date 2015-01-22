@@ -1,0 +1,5 @@
+h1 class="title" data-bind="title"
+.monitors
+  div data-foreach-item="monitors" data-bind-class="item.status | prepend 'monitor m-'"
+    span data-bind-class="item.status | getIcon"
+    span data-bind="item.type"

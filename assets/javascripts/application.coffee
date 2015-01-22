@@ -44,6 +44,10 @@ Dashing.on 'ready', ->
           cl += "close"
         when "warning"
           cl += "exclamation-triangle"
+        when "up"
+          cl += "arrow-circle-up"
+        when "down"
+          cl += "arrow-circle-down"
         else
           cl += "question"
       cl
