@@ -1,0 +1,87 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #dc5945;
+$tick-color:        rgba(white, .2);
+
+
+// ----------------------------------------------------------------------------
+// Widget-graph styles
+// ----------------------------------------------------------------------------
+.widget-graph {
+  position: relative;
+
+  .value {
+    font-size: 90px;
+    font-weight: normal;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: table;
+    width: 100%;
+  }
+
+  .browsers {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+
+    .browser {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
+  .content {
+    position: absolute;
+    overflow: hidden;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 10px;
+
+    path {
+      stroke: rgba(#fff39a, .5);
+      stroke-width: 4;
+    }
+  }
+
+  .y-axis {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+  }
+
+  .x_tick {
+    position: absolute;
+    bottom: 10px;
+    opacity: .3;
+  }
+
+  .y_ticks {
+    fill: $tick-color;
+    fill-opacity: 1;
+  }
+
+  .domain {
+    display: none;
+  }
+}

@@ -1,0 +1,5 @@
+h1 class="title" data-bind="title"
+.content
+  h2 class="value" data-bind="current | prettyNumber | prepend prefix"
+  .browsers
+    span.browser data-foreach-item="browsers" data-bind="item.browser | append ' (' | append item.visitors | append ')'"
