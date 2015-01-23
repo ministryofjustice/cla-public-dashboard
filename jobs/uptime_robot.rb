@@ -20,7 +20,11 @@ SCHEDULER.every '5m', first_in: 0 do
   monitors = []
 
   client.getMonitors['monitors']['monitor'].each do |m|
-    monitors << { type: TYPES[m['type']], status: STATUSES[m['status']] }
+    monitors << {
+      name: m['friendlyname'],
+      type: TYPES[m['type']],
+      status: STATUSES[m['status']]
+    }
   end
 
   send_event('uptime_robot', { monitors: monitors })
