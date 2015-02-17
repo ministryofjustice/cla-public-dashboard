@@ -14,15 +14,17 @@ $building-colour: #9999d4;
 
   li {
     text-align: left;
-    margin: 10px 0;
-    font-size: 15px;
+    padding: 8px 0;
+
+    &:not(:first-child) {
+      border-top: 1px solid rgba(white, .2);
+    }
 
     i {
-      font-size: 18px;
-      width: 20px;
+      font-size: 24px;
       display: inline-block;
       text-align: center;
-      margin-right: 5px;
+      margin-right: 10px;
     }
 
     i, span {
@@ -30,30 +32,44 @@ $building-colour: #9999d4;
     }
 
     &.building {
-      color: $building-colour;
+      i, .desc {
+        color: $building-colour;
+      }
     }
     &.success {
-      color: $pass-colour;
+      i, .desc {
+        color: $pass-colour;
+      }
     }
     &.failure {
-      color: $fail-colour;
+      i, .desc {
+        color: $fail-colour;
+      }
     }
     &.aborted {
-      color: $abort-colour;
+      i, .desc {
+        color: $abort-colour;
+      }
     }
 
-    .number {
-      margin-right: 5px;
+    .build-number {
+      margin-right: 2px;
+      border: 1px solid rgba(white, .3);
+      border-radius: 2px;
+      padding: 0 .5rem;
     }
-    .time {
-      margin-left: 25px;
-    }
-    .author {
-      margin-left: 5px;
-    }
+
     .byline {
       opacity: .6;
-      font-size: 0.8rem;
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+
+    .desc {
+      font-size: 1.15rem;
+      margin-top: 5px;
+      max-height: 3.4rem;
+      overflow: hidden;
     }
   }
 

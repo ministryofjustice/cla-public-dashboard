@@ -1,38 +1,17 @@
 .widget-github {
+  $_padding: 3.5rem;
+
   text-align: left;
 
   .pull {
-    padding: .8rem 3.5rem;
+    padding: .8rem $_padding;
     overflow: hidden;
-
-    ._number {
-      font-weight: 600;
-      color: black;
-      background: rgba(white, .6);
-      float: left;
-      border-radius: 2px;
-      padding: 0 .5rem;
-      margin-left: -3.5rem;
-
-      &.m-fresh {
-        background: #55d14f;
-      }
-      &.m-normal {
-        background: #eece5a;
-      }
-      &.m-old {
-        background: #8a7ce3;
-      }
-      &.m-stale {
-        background: #f85e61;
-      }
-    }
 
     .user {
       float: right;
       width: 3rem;
       height: 3rem;
-      margin-right: -3.5rem;
+      margin-right: -$_padding;
 
       ._name {
         display: none;
@@ -47,5 +26,10 @@
       color: rgba(white, .4);
       font-size: .8rem;
     }
+  }
+
+  .pr-number {
+    float: left;
+    margin-left: -$_padding;
   }
 }

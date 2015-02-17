@@ -76,4 +76,25 @@
   &.s-updated {
     -webkit-animation: updated 1s alternate;
   }
+
+  .pr-number {
+    font-weight: 600;
+    color: black;
+    background: rgba(white, .5);
+    border-radius: 2px;
+    padding: 0 .5rem;
+
+    &.m-fresh {
+      background: #55d14f;
+    }
+    &.m-normal {
+      background: #eece5a;
+    }
+    &.m-old {
+      background: #8a7ce3;
+    }
+    &.m-stale {
+      background: #f85e61;
+    }
+  }
 }

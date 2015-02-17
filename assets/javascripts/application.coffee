@@ -25,12 +25,6 @@ Dashing.on 'ready', ->
         start: -> Dashing.currentWidgetPositions = Dashing.getWidgetPositions()
 
   Batman.mixin Batman.Filters,
-    formatDescription: (desc) ->
-      closeInd = desc.indexOf("</a>")
-      anchor = desc.slice(0, closeInd + 4)
-      $aObj = $(anchor)
-      $aObj.text() + " " + $aObj.attr("title")
-
     getIcon: (result) ->
       cl = "fa fa-"
       switch result

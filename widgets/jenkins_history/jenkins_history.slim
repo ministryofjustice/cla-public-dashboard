@@ -2,11 +2,13 @@ h1.title Jenkins Build History
 
 ul
   li data-foreach-item="statuses" data-bind-class="item.result | default 'building' | downcase"
-    div
-      i data-bind-class="item.result | default 'building' | downcase | getIcon"
-      span.number data-bind="item.number"
-      span.desc data-bind="item.description | formatDescription | truncate '50'"
-    .byline
-      span.time data-bind="item.timestamp | formatTime"
-      ',
-      span.author data-bind="item.actions | getAuthor"
+    .meta
+      i.status data-bind-class="item.result | default 'building' | downcase | getIcon"
+      span.build-number data-bind="item.number"
+      span.pr-number data-bind="item.pullNumber | prepend 'PR '"
+      span.byline
+        time data-bind="item.timestamp | formatTime"
+        ',
+        span.author data-bind="item.actions | getAuthor"
+
+    .desc data-bind="item.description"

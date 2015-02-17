@@ -3,7 +3,7 @@ h1.title
   span._meta data-bind="pulls.length | append ' open'"
 ul data-renderif="pulls.length"
   li.pull data-foreach-item="pulls"
-    ._number data-bind-class="item.freshness | prepend '_number m-'" data-bind="item.number"
+    .pr-number data-bind-class="item.freshness | prepend 'pr-number m-'" data-bind="item.number"
     .user
       ._name data-bind="item.user.name"
       img._avatar data-bind-src="item.user.avatar_url"
