@@ -1,0 +1,41 @@
+.ga-stats {
+  font-size: 1.2rem;
+
+  li {
+    line-height: 1;
+    vertical-align: top;
+    padding: 20px;
+  }
+
+  li li {
+    padding: 28px 20px;
+    display: inline-block;
+    width: 180px;
+  }
+
+  .visitors {
+    font-size: 1.3em;
+  }
+
+  .results {
+    border: solid rgba(white, .2);
+    border-width: 1px 0;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .pageviews {
+    padding: 0;
+  }
+
+  .number {
+    font-size: 2.4em;
+    color: white;
+    font-weight: 600;
+  }
+
+  .label {
+    color: rgba(white, .7);
+    margin-top: 10px;
+  }
+}

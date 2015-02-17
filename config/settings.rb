@@ -15,3 +15,7 @@ JENKINS_AUTH = {
   'name' => ENV['JENKINS_USER'],
   'password' => ENV['JENKINS_TOKEN']
 }
+
+GA_SERVICE_ACCOUNT_EMAIL = ENV['GOOGLE_SERVICE_ACCOUNT_EMAIL'] # Email of service account
+GA_KEY_FILE = 'client.p12' # File containing your private key
+GA_VIEW_ID = ENV['GOOGLE_ANALYTICS_VIEW_ID'] # Analytics profile ID.

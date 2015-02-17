@@ -1,0 +1,29 @@
+h1 class="title" data-bind="title"
+
+ul.ga-stats
+  li.visitors
+    .number data-bind="users | prettyNumber"
+    .label unique vsitors
+  li.results
+    ul
+      li
+        .number data-bind="eligible_users | prettyNumber"
+        .label eligible users
+      li
+        .number data-bind="ineligible_users | prettyNumber"
+        .label ineligible users
+      li
+        .number data-bind="face_to_face_users | prettyNumber"
+        .label people in face-to-face category
+      li
+        .number data-bind="call_me_back_users | prettyNumber"
+        .label people requested a callback
+  li.pageviews
+    ul
+      li
+        .number data-bind="page_views | prettyNumber"
+        .label page views
+      li
+        .number data-bind="unique_page_views | prettyNumber"
+        .label unique page views
+
