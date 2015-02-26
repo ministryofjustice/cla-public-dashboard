@@ -33,7 +33,7 @@ SCHEDULER.every '3h', first_in: 0 do
   eligible_users = 0
   ineligible_users = 0
   face_to_face_users = 0
-  call_me_back_users = 0
+  contact_users = 0
 
   base = {
     api_method: analytics.data.ga.get,
@@ -97,19 +97,19 @@ SCHEDULER.every '3h', first_in: 0 do
     face_to_face_users = result.data.totalsForAllResults['ga:users'].to_i
   end
 
-  call_me_back = {
+  contact = {
     api_method: analytics.data.ga.get,
     parameters: {
       'ids' => "ga:#{GA_VIEW_ID}",
       'start-date' => START_DATE,
       'end-date' => END_DATE,
       'metrics' => "ga:users",
-      'filters' => "ga:pagePath=@call-me-back"
+      'filters' => "ga:pagePath=@contact"
     }
   }
 
-  batch.add(call_me_back) do |result|
-    call_me_back_users = result.data.totalsForAllResults['ga:users'].to_i
+  batch.add(contact) do |result|
+    contact_users = result.data.totalsForAllResults['ga:users'].to_i
   end
 
   client.execute(batch)
@@ -121,6 +121,6 @@ SCHEDULER.every '3h', first_in: 0 do
     eligible_users: eligible_users,
     ineligible_users: ineligible_users,
     face_to_face_users: face_to_face_users,
-    call_me_back_users: call_me_back_users
+    contact_users: contact_users
   })
 end
