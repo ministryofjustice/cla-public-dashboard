@@ -1,7 +1,7 @@
 require 'google/api_client'
 require 'date'
 
-START_DATE = "2daysAgo" #7daysAgo
+START_DATE = "yesterday"
 END_DATE = "yesterday"
 
 # Get the Google API client
