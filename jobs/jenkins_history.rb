@@ -21,8 +21,13 @@ SCHEDULER.every '300s', :first_in => 0 do
   statuses = jsondata['builds'][1..NUM_LINES]
 
   statuses.map do |item|
-    item['pullNumber'] = item['actions'][0]['parameters'][6]['value']
-    item['description'] = item['actions'][0]['parameters'][12]['value']
+    if item['actions'][0]['parameters']
+      item['pullNumber'] = item['actions'][0]['parameters'][6]['value']
+      item['description'] = item['actions'][0]['parameters'][12]['value']
+    else
+      item['pullNumber'] = 'N/A'
+      item['description'] = 'N/A'
+    end
   end
 
   send_event('jenkins_history', "statuses" => statuses)

@@ -50,4 +50,5 @@ Dashing.on 'ready', ->
       moment(timestamp).fromNow()
 
     getAuthor: (actions) ->
+      return 'N/A' unless actions[0].parameters
       return actions[0].parameters[2].value
