@@ -14,7 +14,7 @@ TYPES = {
   '4' => 'Port',
 }
 
-client = UptimeRobot::Client.new(apiKey: 'u200741-b3910f5b96a269d52fe51b73')
+client = UptimeRobot::Client.new(apiKey: ENV['UPTIMEROBOT_API_KEY'])
 
 SCHEDULER.every '5m', first_in: 0 do
   monitors = []
