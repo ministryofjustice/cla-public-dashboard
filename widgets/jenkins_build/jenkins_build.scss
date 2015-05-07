@@ -1,48 +1,55 @@
 .widget-jenkins-build {
+  $_inner-padding: 18px;
+
   text-align: left;
 
-  svg {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 100px;
-    margin: auto;
+  .build-status {
+    height: 240px;
+    border: solid rgba(white, .2);
+    border-width: 1px 0;
+    padding: $_inner-padding 0;
   }
 
-  #needle {
-    transition: all 300ms;
-    transform-origin: 50% 95%;
+  circle {
+    fill: transparent;
+    stroke: rgba(white, .1);
+    stroke-width: 60px;
+  }
+
+  .bar {
+    stroke: #5adc53;
+  }
+
+  svg {
+    display: block;
+    margin: auto;
   }
 
   .pull-title,
   .build-meta {
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 20px;
+    overflow: hidden;
+    padding: $_inner-padding 0;
   }
 
   .pull-title {
     font-size: 1.4rem;
-    max-height: 3.3em;
-    overflow: hidden;
+    height: 3.3em;
   }
 
   .build-meta {
-    bottom: 10px;
     font-size: 1.3rem;
+    padding-bottom: 0;
   }
 
   .commit-author {
     float: left;
+    margin-top: 5px;
   }
 
   .time {
     text-align: right;
     font-size: .7em;
     float: right;
-    margin-top: -.5em;
 
     ._label {
       opacity: .5;
