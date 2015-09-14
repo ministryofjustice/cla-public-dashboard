@@ -8,34 +8,65 @@
   }
 
   li li {
-    padding: 28px 20px;
+    padding: 30px 20px;
     display: inline-block;
-    width: 180px;
+    width: 170px;
   }
 
   .visitors {
     font-size: 1.3em;
   }
 
-  .results {
-    border: solid rgba(white, .2);
-    border-width: 1px 0;
+  .outcomes {
+    border-top: 2px solid rgba(white, .2);
     padding: 0;
     margin: 10px 0;
-  }
 
-  .pageviews {
-    padding: 0;
+    .number {
+      font-size: 2em;
+    }
   }
 
   .number {
     font-size: 2.4em;
     color: white;
     font-weight: 600;
+    display: inline-block;
+    text-shadow: 0 0 2px white;
+
+    &:before {
+      font-size: .8em;
+      vertical-align: middle;
+      margin-right: 10px;
+      opacity: .8;
+      position: relative;
+      top: -5px;
+      text-shadow: none;
+    }
+
+    &.fa-caret-up:before {
+      color: #55d14f;
+    }
+    &.fa-caret-down:before {
+      color: #f85e61;
+    }
   }
 
   .label {
     color: rgba(white, .7);
     margin-top: 10px;
+  }
+
+  .complete .number {
+    color: #87c502;
+    text-shadow: 0 0 3px #87c502;
+  }
+  .ad .number {
+    color: #f5f559;
+    text-shadow: 0 0 3px #f5f559;
+  }
+  .referred .number {
+    color: #ffa400;
+    text-shadow: 0 0 3px #ffa400;
   }
 }
