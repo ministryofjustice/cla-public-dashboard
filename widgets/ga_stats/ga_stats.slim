@@ -2,28 +2,31 @@ h1 class="title" data-bind="title"
 
 ul.ga-stats
   li.visitors
-    .number data-bind="users | prettyNumber"
-    .label unique vsitors
-  li.results
+    div data-bind="sessions.value | prettyNumber" data-bind-class="sessions.change | prepend 'number fa fa-caret-'"
+    .label sessions
+  li.outcomes
     ul
-      li
-        .number data-bind="eligible_users | prettyNumber"
-        .label eligible users
-      li
-        .number data-bind="ineligible_users | prettyNumber"
-        .label ineligible users
-      li
-        .number data-bind="face_to_face_users | prettyNumber"
-        .label people in face-to-face category
-      li
-        .number data-bind="contact_users | prettyNumber"
-        .label people went to contact page
-  li.pageviews
-    ul
-      li
-        .number data-bind="page_views | prettyNumber"
-        .label page views
-      li
-        .number data-bind="unique_page_views | prettyNumber"
-        .label unique page views
-
+      li.complete
+        div data-bind="eligible.value | prettyNumber | append '%'" data-bind-class="eligible.change | prepend 'number fa fa-caret-'"
+        .label eligible
+      li.ad
+        div data-bind="incomplete.value | prettyNumber | append '%'" data-bind-class="incomplete.change | prepend 'number fa fa-caret-'"
+        .label incomplete (skip)
+      li.ad
+        div data-bind="provisional.value | prettyNumber | append '%'" data-bind-class="provisional.change | prepend 'number fa fa-caret-'"
+        .label provisional
+      li.referred
+        div data-bind="family_mediation.value | prettyNumber | append '%'" data-bind-class="family_mediation.change | prepend 'number fa fa-caret-'"
+        .label family mediation
+      li.referred
+        div data-bind="ineligible_scope.value | prettyNumber | append '%'" data-bind-class="ineligible_scope.change | prepend 'number fa fa-caret-'"
+        .label ineligible (scope)
+      li.referred
+        div data-bind="ineligible_means.value | prettyNumber | append '%'" data-bind-class="ineligible_means.change | prepend 'number fa fa-caret-'"
+        .label ineligible (means)
+      li.referred
+        div data-bind="f2f_scope.value | prettyNumber | append '%'" data-bind-class="f2f_scope.change | prepend 'number fa fa-caret-'"
+        .label face-to-face (scope)
+      li.referred
+        div data-bind="f2f_means.value | prettyNumber | append '%'" data-bind-class="f2f_means.change | prepend 'number fa fa-caret-'"
+        .label face-to-face (means)
