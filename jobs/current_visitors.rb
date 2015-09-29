@@ -20,7 +20,7 @@ client.authorization = Signet::OAuth2::Client.new(
   signing_key: key)
 
 # Start the scheduler
-SCHEDULER.every '5s', first_in: 0 do
+SCHEDULER.every '10s', first_in: 0 do
   client.authorization.fetch_access_token!
   analytics = client.discovered_api('analytics','v3')
 
