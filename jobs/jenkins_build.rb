@@ -6,7 +6,7 @@ include ActionView::Helpers::DateHelper
 
 # the key of this mapping must be a unique identifier for your job, the according value must be the name that is specified in jenkins
 job_mapping = {
-  'JOB' => { :job => 'CLA Public - Integration PRs' }
+  'JOB' => { :job => 'cla_public-PR' }
 }
 
 def get_completion_percentage(job_name)

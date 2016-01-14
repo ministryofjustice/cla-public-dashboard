@@ -9,7 +9,7 @@ SCHEDULER.every '300s', :first_in => 0 do
 
   #Fetch job status info from Jenkins (full job list)
   http = Net::HTTP.new(JENKINS_URI.host, JENKINS_URI.port)
-  request = Net::HTTP::Get.new("/job/CLA%20Public%20-%20Integration%20PRs/api/json?tree=builds[number,timestamp,result,description,actions[parameters[value]]]")
+  request = Net::HTTP::Get.new("/job/cla_public-PR/api/json?tree=builds[number,timestamp,result,description,actions[parameters[value]]]")
 
   if JENKINS_AUTH['name']
     request.basic_auth(JENKINS_AUTH['name'], JENKINS_AUTH['password'])

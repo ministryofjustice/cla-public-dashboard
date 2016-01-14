@@ -2,8 +2,8 @@ require 'net/http'
 require 'json'
 
 JOBS = [
-  { label: 'Integration', name: 'CLA Public - Integration', uri: JENKINS_URI },
-  { label: 'Demo',        name: 'CLA Deploy Public to DEMO', uri: JENKINS_URI },
+  { label: 'Develop',     name: 'cla_public-DEVELOP', uri: JENKINS_URI },
+  { label: 'Master',      name: 'cla_public-MASTER', uri: JENKINS_URI },
   { label: 'Staging',     name: 'CLA Deploy PUBLIC to STAGING', uri: JENKINS_INTERNAL_URI },
   { label: 'Production',  name: 'CLA Deploy PUBLIC to PRODUCTION', uri: JENKINS_INTERNAL_URI }
 ]
